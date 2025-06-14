@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Doménica - Mi Amor Eterno</title>
+    <link rel="stylesheet" href="stylos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Audio de fondo -->
+        <audio id="background-music" loop>
+            <source src="BIRDS OF A FEATHER.mp3" type="audio/wav">
+        </audio>
+
+        <!-- Control de música -->
+        <div class="music-control">
+            <button id="music-toggle" onclick="toggleMusic()">
+                <i class="fas fa-music"></i>
+            </button>
+        </div>
+
+        <!-- Notificación sorpresa -->
+        <div id="notification" class="notification">
+            <div class="notification-content">
+                <span class="notification-icon">💕</span>
+                <span class="notification-text">¡Tengo una sorpresa para ti!</span>
+                <button class="notification-btn" onclick="openSurpriseModal()">Ver sorpresa</button>
+                <button class="notification-close" onclick="hideNotification()">×</button>
+            </div>
+        </div>
+
+        <!-- Modal de sorpresa -->
+        <div id="surprise-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeSurpriseModal()">&times;</span>
+                <div class="surprise-content">
+                    <h2>💖 Sorpresa Especial 💖</h2>
+                    <div class="surprise-message">
+                        <p>Mi amor hermoso,</p>
+                        <p>Esta pequeña sorpresa es para recordarte que cada segundo que pasa, mi amor por ti crece más y más.</p>
+                        <p>Aunque estemos separados por la distancia, mi corazón siempre está contigo.</p>
+                        <div class="surprise-hearts">💕✨💖✨💕</div>
+                        <p><strong>¡Eres mi todo, mi amor eterno!</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partículas flotantes -->
+        <div id="particles"></div>
+
+        <!-- Libro -->
+        <div class="book" id="book">
+            <!-- Página 1 - Portada -->
+            <div class="page" data-page="1">
+                <div class="page-content portada">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌹</div>
+                        <div class="corner-decoration top-right">💝</div>
+                        <div class="corner-decoration bottom-left">💕</div>
+                        <div class="corner-decoration bottom-right">🌹</div>
+                        <div class="border-decoration">
+                            <div class="border-hearts">💖 💕 💝 💗 💞 💓 🌸 🌺 🌹 💐 🌷 🌻 🌼 🦋</div>
+                        </div>
+                    </div>
+                    <h1 class="titulo-principal">💕 Mi Amorcito 💕</h1>
+                    <div class="dedicatoria">
+                        <p>Mi amor desde el 27 de abril de 2025</p>
+                        <p class="subtitulo">Un librito de amor para mi mujer</p>
+                        <div class="corazones-decorativos">
+                            <span>💖</span>
+                            <span>💝</span>
+                            <span>💖</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 2 - Carta de amor -->
+            <div class="page" data-page="2">
+                <div class="page-content carta">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">💌</div>
+                        <div class="corner-decoration top-right">💕</div>
+                        <div class="corner-decoration bottom-left">🌹</div>
+                        <div class="corner-decoration bottom-right">💌</div>
+                    </div>
+                    <h2>Mi Amor por ti</h2>
+                    <p>Mi querida Doménica,</p>
+                    <p>Desde que llegaste a mi vida, cada mensaje tuyo ilumina mis días y cada llamada llena mi corazón de felicidad.</p>
+                    <p>Aunque los kilómetros nos separen, nuestro amor es más fuerte que cualquier distancia. Cada 6 de mayo celebro no solo tu cumpleaños, sino el día en que el universo me regaló a la persona más maravillosa que existe.</p>
+                    <p>Este librito es para ti, con todo mi amor que viaja a través de la distancia hasta llegar a tu corazón...</p>
+                    <div class="firma">Con amor infinito a través de cualquier distancia 💕</div>
+                </div>
+            </div>
+
+            <!-- Páginas 3-7 - Fotos -->
+            <div class="page" data-page="3">
+                <div class="page-content foto-page">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">📸</div>
+                        <div class="corner-decoration top-right">💖</div>
+                        <div class="corner-decoration bottom-left">🌹</div>
+                        <div class="corner-decoration bottom-right">📸</div>
+                    </div>
+                    <h3>Nuestros Momentos Especiales</h3>
+                    <div class="foto-container">
+                        <img src="Captura de pantalla 2025-05-01 025640.png" alt="Nuestro primer momento juntos" class="foto">
+                        <p class="pie-foto">El día que comenzó nuestra historia de amor 💖</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" data-page="4">
+                <div class="page-content foto-page">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌺</div>
+                        <div class="corner-decoration top-right">💝</div>
+                        <div class="corner-decoration bottom-left">💫</div>
+                        <div class="corner-decoration bottom-right">🌺</div>
+                    </div>
+                    <h3>Recuerdos Inolvidables</h3>
+                    <div class="foto-container">
+                        <img src="Imagen de WhatsApp 2025-06-14 a las 01.36.42_9ad711bf.jpg" alt="Momento especial juntos" class="foto">
+                        <p class="pie-foto">Cada momento contigo es perfecto 🌟</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" data-page="5">
+                <div class="page-content foto-page">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">😊</div>
+                        <div class="corner-decoration top-right">💕</div>
+                        <div class="corner-decoration bottom-left">🌸</div>
+                        <div class="corner-decoration bottom-right">😊</div>
+                    </div>
+                    <h3>Nuestros hijitos 💕</h3>
+                    <div class="foto-container">
+                        <img src="negro.jpg" alt="Tu hermosa sonrisa" class="foto">
+                        <p class="pie-foto">Nuestro hijito lindo y peludo 💞</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" data-page="6">
+                <div class="page-content foto-page">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">💑</div>
+                        <div class="corner-decoration top-right">💞</div>
+                        <div class="corner-decoration bottom-left">🌹</div>
+                        <div class="corner-decoration bottom-right">💑</div>
+                    </div>
+                    <h3>Juntos Para Siempre</h3>
+                    <div class="foto-container">
+                        <img src="pooote.jpg" alt="Nuestro amor" class="foto">
+                        <p class="pie-foto">Nuestro hijito lindo y apestosito 💞</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" data-page="7">
+                <div class="page-content foto-page">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">💕</div>
+                        <div class="corner-decoration top-right">🌹</div>
+                        <div class="corner-decoration bottom-left">💖</div>
+                        <div class="corner-decoration bottom-right">💕</div>
+                    </div>
+                    <h3>Nuestra hija linda</h3>
+                    <div class="foto-container">
+                        <img src="chloe.jpg" alt="Mi amor eterno" class="foto">
+                        <p class="pie-foto">Nuestra hija linda, hermosa y chismosita 💕</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Páginas 8-17 - 100 razones por las que la amo (relación a distancia) -->
+            <!-- Página 8: Razones 1-10 -->
+            <div class="page" data-page="8">
+                <div class="page-content razones">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌹</div>
+                        <div class="corner-decoration top-right">💝</div>
+                        <div class="corner-decoration bottom-left">💕</div>
+                        <div class="corner-decoration bottom-right">🌹</div>
+                    </div>
+                    <h3>100 Razones Por Las Que Te Amo</h3>
+                    <div class="lista-razones">
+                        <div class="razon">💖 1. Tu sonrisa ilumina mis días aunque estés lejos</div>
+                        <div class="razon">📱 2. Cada mensaje tuyo hace latir mi corazón</div>
+                        <div class="razon">💕 3. La forma en que me cuidas desde la distancia</div>
+                        <div class="razon">🌟 4. Tu voz es mi melodía favorita en cada llamada</div>
+                        <div class="razon">💝 5. Como haces que la distancia sea solo un número</div>
+                        <div class="razon">🌸 6. Tu paciencia con esta relación a distancia</div>
+                        <div class="razon">💫 7. Los buenos días que me envías cada mañana</div>
+                        <div class="razon">🦋 8. Como me haces sentir cerca aunque estés lejos</div>
+                        <div class="razon">💖 9. Tu comprensión cuando extraño tus abrazos</div>
+                        <div class="razon">🌹 10. Las llamadas que alegran mi día</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 9: Razones 11-20 -->
+            <div class="page" data-page="9">
+                <div class="page-content razones">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌺</div>
+                        <div class="corner-decoration top-right">💞</div>
+                        <div class="corner-decoration bottom-left">🦋</div>
+                        <div class="corner-decoration bottom-right">🌺</div>
+                    </div>
+                    <h3>Razones 11-20...</h3>
+                    <div class="lista-razones">
+                        <div class="razon">💗 11. Los planes que hacemos para nuestro reencuentro</div>
+                        <div class="razon">📞 12. Como tu risa suena hermosa por teléfono</div>
+                        <div class="razon">💕 13. Los "te amo" que me escribes de madrugada</div>
+                        <div class="razon">🌟 14. Tu fe en que nuestra relación funcionará</div>
+                        <div class="razon">💝 15. Como me envías fotos de Chloe para alegrarme</div>
+                        <div class="razon">🌸 16. Las canciones que compartimos para sentirnos cerca</div>
+                        <div class="razon">💫 17. Tu fortaleza para superar la nostalgia</div>
+                        <div class="razon">🦋 18. Los "buenos días" y "buenas noches" constantes</div>
+                        <div class="razon">💖 19. Como me apoyas en mis días difíciles</div>
+                        <div class="razon">🌹 20. La ilusión en tu voz cuando hablamos de vernos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 10: Razones 21-30 -->
+            <div class="page" data-page="10">
+                <div class="page-content razones">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">💐</div>
+                        <div class="corner-decoration top-right">💓</div>
+                        <div class="corner-decoration bottom-left">🌹</div>
+                        <div class="corner-decoration bottom-right">💐</div>
+                    </div>
+                    <h3>Razones 21-30...</h3>
+                    <div class="lista-razones">
+                        <div class="razon">💗 21. Las fotos de Chloe recien despierta</div>
+                        <div class="razon">📱 22. Como esperas pacientemente mis mensajes</div>
+                        <div class="razon">💕 23. Tu sonrisa que traspasa la pantalla</div>
+                        <div class="razon">🌟 24. Los "te extraño" sinceros que compartimos</div>
+                        <div class="razon">💝 25. Como me haces reír hasta por chat</div>
+                        <div class="razon">🌸 26. Tu lealtad a pesar de la distancia</div>
+                        <div class="razon">💫 27. Los planes locos que hacemos para vernos</div>
+                        <div class="razon">🦋 28. Como guardas cada foto que te envío</div>
+                        <div class="razon">💖 29. Tu paciencia con las diferencias horarias</div>
+                        <div class="razon">🌹 30. Como haces especial cada conversación</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 11: Razones 31-40 -->
+            <div class="page" data-page="11">
+                <div class="page-content razones">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌷</div>
+                        <div class="corner-decoration top-right">💗</div>
+                        <div class="corner-decoration bottom-left">💫</div>
+                        <div class="corner-decoration bottom-right">🌷</div>
+                    </div>
+                    <h3>Razones 31-40...</h3>
+                    <div class="lista-razones">
+                        <div class="razon">💗 31. Los audios largos que me mandas</div>
+                        <div class="razon">📱 32. Como recuerdas cada detalle de lo que te cuento</div>
+                        <div class="razon">💕 33. Tu forma única de decir "te amo"</div>
+                        <div class="razon">🌟 34. Como me apoyas en mis sueños</div>
+                        <div class="razon">💝 35. Los planes que tenemos para el futuro</div>
+                        <div class="razon">🌸 36. Como me calmas cuando estoy estresado</div>
+                        <div class="razon">💫 37. Tu risa contagiosa en videollamadas</div>
+                        <div class="razon">🦋 38. Como me haces sentir especial cada día</div>
+                        <div class="razon">💖 39. Tu forma de cuidar a nuestras mascotas</div>
+                        <div class="razon">🌹 40. Como iluminas mi mundo desde lejos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 12: Razones 41-50 -->
+            <div class="page" data-page="12">
+                <div class="page-content razones">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌻</div>
+                        <div class="corner-decoration top-right">💞</div>
+                        <div class="corner-decoration bottom-left">🌺</div>
+                        <div class="corner-decoration bottom-right">🌻</div>
+                    </div>
+                    <h3>Razones 41-50...</h3>
+                    <div class="lista-razones">
+                        <div class="razon">💗 41. Los memes que compartimos</div>
+                        <div class="razon">📱 42. Como me haces reír en mis peores días</div>
+                        <div class="razon">💕 43. Tu paciencia cuando tengo mal humor</div>
+                        <div class="razon">🌟 44. Como celebramos cada pequeño logro</div>
+                        <div class="razon">💝 45. Los planes románticos para cuando nos veamos</div>
+                        <div class="razon">🌸 46. Como me escuchas cuando necesito desahogarme</div>
+                        <div class="razon">💫 47. Tu forma de ser tan cariñosa por mensaje</div>
+                        <div class="razon">🦋 48. Como guardas capturas de nuestras conversaciones</div>
+                        <div class="razon">💖 49. Tu forma de decir "buenos días"</div>
+                        <div class="razon">🌹 50. Como haces que cada día valga la pena</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 13: Razones 51-60 -->
+            <div class="page" data-page="13">
+                <div class="page-content razones">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌼</div>
+                        <div class="corner-decoration top-right">💓</div>
+                        <div class="corner-decoration bottom-left">💝</div>
+                        <div class="corner-decoration bottom-right">🌼</div>
+                    </div>
+                    <h3>Razones 51-60...</h3>
+                    <div class="lista-razones">
+                        <div class="razon">💗 51. Como me motivas a ser mejor persona</div>
+                        <div class="razon">📱 52. Los selfies que me mandas</div>
+                        <div class="razon">💕 53. Tu forma de preocuparte por mi salud</div>
+                        <div class="razon">🌟 54. Como hacemos planes juntos aunque estemos lejos</div>
+                        <div class="razon">💝 55. Tu paciencia con mi mal internet</div>
+                        <div class="razon">🌸 56. Como me apoyas en mis decisiones</div>
+                        <div class="razon">💫 57. Los "te extraño" de madrugada</div>
+                        <div class="razon">🦋 58. Como haces que la espera valga la pena</div>
+                        <div class="razon">💖 59. Tu forma de ser tan comprensiva</div>
+                        <div class="razon">🌹 60. Como me haces sentir amado cada día</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 14: Razones 61-70 -->
+            <div class="page" data-page="14">
+                <div class="page-content razones">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">💐</div>
+                        <div class="corner-decoration top-right">💕</div>
+                        <div class="corner-decoration bottom-left">🌸</div>
+                        <div class="corner-decoration bottom-right">💐</div>
+                    </div>
+                    <h3>Razones 61-70...</h3>
+                    <div class="lista-razones">
+                        <div class="razon">💗 61. Como me calmas con tu voz</div>
+                        <div class="razon">📱 62. Los emojis que usas conmigo</div>
+                        <div class="razon">💕 63. Tu forma de decir "buenas noches"</div>
+                        <div class="razon">🌟 64. Como compartimos nuestros sueños</div>
+                        <div class="razon">💝 65. Tu sonrisa en las fotos</div>
+                        <div class="razon">🌸 66. Como me haces sentir único</div>
+                        <div class="razon">💫 67. Los momentos románticos por videollamada</div>
+                        <div class="razon">🦋 68. Como guardas mis mensajes bonitos</div>
+                        <div class="razon">💖 69. Tu forma de amarme sin límites</div>
+                        <div class="razon">🌹 70. Como haces mágico lo ordinario</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 15: Razones 71-80 -->
+            <div class="page" data-page="15">
+                <div class="page-content razones">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌺</div>
+                        <div class="corner-decoration top-right">💖</div>
+                        <div class="corner-decoration bottom-left">💞</div>
+                        <div class="corner-decoration bottom-right">🌺</div>
+                    </div>
+                    <h3>Razones 71-80...</h3>
+                    <div class="lista-razones">
+                        <div class="razon">💗 71. Como me apoyas en mis proyectos</div>
+                        <div class="razon">📱 72. Los "te pienso" espontáneos</div>
+                        <div class="razon">💕 73. Tu forma de ser tan detallista</div>
+                        <div class="razon">🌟 74. Como haces que el tiempo pase rápido</div>
+                        <div class="razon">💝 75. Tu manera de demostrar cariño</div>
+                        <div class="razon">🌸 76. Como me das fuerza cuando la necesito</div>
+                        <div class="razon">💫 77. Los planes que hacemos juntos</div>
+                        <div class="razon">🦋 78. Como me haces reír sin esfuerzo</div>
+                        <div class="razon">💖 79. Tu forma de ser tan auténtica</div>
+                        <div class="razon">🌹 80. Como llenas mi vida de color</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 16: Razones 81-90 -->
+            <div class="page" data-page="16">
+                <div class="page-content razones">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌷</div>
+                        <div class="corner-decoration top-right">💗</div>
+                        <div class="corner-decoration bottom-left">🌻</div>
+                        <div class="corner-decoration bottom-right">🌷</div>
+                    </div>
+                    <h3>Razones 81-90...</h3>
+                    <div class="lista-razones">
+                        <div class="razon">💗 81. Como me haces sentir valioso</div>
+                        <div class="razon">📱 82. Los "como estuvo tu día" constantes</div>
+                        <div class="razon">💕 83. Tu forma de preocuparte por mis cosas</div>
+                        <div class="razon">🌟 84. Como hacemos que funcione a distancia</div>
+                        <div class="razon">💝 85. Tu paciencia con mis inseguridades</div>
+                        <div class="razon">🌸 86. Como me ayudas a crecer como persona</div>
+                        <div class="razon">💫 87. Los momentos íntimos por videollamada</div>
+                        <div class="razon">🦋 88. Como haces que me sienta cerca</div>
+                        <div class="razon">💖 89. Tu forma de amarme incondicionalmente</div>
+                        <div class="razon">🌹 90. Como haces que valga la pena esperar</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 17: Razones 91-100 -->
+            <div class="page" data-page="17">
+                <div class="page-content razones">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">💖</div>
+                        <div class="corner-decoration top-right">🌹</div>
+                        <div class="corner-decoration bottom-left">💕</div>
+                        <div class="corner-decoration bottom-right">💖</div>
+                    </div>
+                    <h3>Razones 91-100...</h3>
+                    <div class="lista-razones">
+                        <div class="razon">💗 91. Como haces que cada mensaje sea especial</div>
+                        <div class="razon">📱 92. Los "pensé en ti" de cualquier momento</div>
+                        <div class="razon">💕 93. Tu forma de ser mi refugio emocional</div>
+                        <div class="razon">🌟 94. Como celebramos nuestro amor único</div>
+                        <div class="razon">💝 95. Tu constancia en amarme cada día</div>
+                        <div class="razon">🌸 96. Como haces que me sienta completo</div>
+                        <div class="razon">💫 97. Los sueños que tenemos juntos</div>
+                        <div class="razon">🦋 98. Como transformas mi mundo con tu amor</div>
+                        <div class="razon">💖 99. Tu forma de ser mi alma gemela</div>
+                        <div class="razon">🌹 100. Porque eres simplemente perfecta para mí</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Páginas decorativas -->
+            <div class="page" data-page="18">
+                <div class="page-content decorativa">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌸</div>
+                        <div class="corner-decoration top-right">💖</div>
+                        <div class="corner-decoration bottom-left">🦋</div>
+                        <div class="corner-decoration bottom-right">🌸</div>
+                    </div>
+                    <h3>Nuestro Amor es Eterno</h3>
+                    <div class="flores-decorativas">🌺 🌸 🌷 🌻 🌼 💐</div>
+                    <div class="texto-decorativo">
+                        <p>Aunque los kilómetros nos separen,</p>
+                        <p>nuestros corazones laten al mismo tiempo.</p>
+                        <p>El amor verdadero no conoce distancias,</p>
+                        <p>solo conoce la fuerza de dos almas unidas.</p>
+                    </div>
+                    <div class="corazones-flotantes">💕 💖 💞 💗 💝 💓</div>
+                </div>
+            </div>
+
+            <div class="page" data-page="19">
+                <div class="page-content decorativa">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🦋</div>
+                        <div class="corner-decoration top-right">💕</div>
+                        <div class="corner-decoration bottom-left">🌺</div>
+                        <div class="corner-decoration bottom-right">🦋</div>
+                    </div>
+                    <h3>Promesas de Amor</h3>
+                    <div class="flores-decorativas">💖 ✨ 💖 ✨ 💖</div>
+                    <div class="texto-decorativo">
+                        <p>Te prometo que cada día</p>
+                        <p>mi amor por ti será más fuerte.</p>
+                        <p>Te prometo que esta distancia</p>
+                        <p>solo nos hará más unidos.</p>
+                        <p>Te prometo que nuestro reencuentro</p>
+                        <p>será el más hermoso del mundo.</p>
+                    </div>
+                    <div class="corazones-flotantes">🌟 💫 ⭐ 💝 🌟 💫</div>
+                </div>
+            </div>
+
+            <div class="page" data-page="20">
+                <div class="page-content decorativa">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">💐</div>
+                        <div class="corner-decoration top-right">🌹</div>
+                        <div class="corner-decoration bottom-left">💖</div>
+                        <div class="corner-decoration bottom-right">💐</div>
+                    </div>
+                    <h3>Cada Día Contigo</h3>
+                    <div class="flores-decorativas">🌹 💕 🌹 💕 🌹</div>
+                    <div class="texto-decorativo">
+                        <p>Cada amanecer pienso en ti,</p>
+                        <p>cada atardecer sueño contigo.</p>
+                        <p>Cada estrella en el cielo</p>
+                        <p>es un "te amo" que te envío.</p>
+                        <p>Cada latido de mi corazón</p>
+                        <p>lleva tu nombre grabado.</p>
+                    </div>
+                    <div class="corazones-flotantes">💞 🌸 💗 🌺 💞</div>
+                </div>
+            </div>
+
+            <div class="page" data-page="21">
+                <div class="page-content decorativa">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌟</div>
+                        <div class="corner-decoration top-right">💞</div>
+                        <div class="corner-decoration bottom-left">🦋</div>
+                        <div class="corner-decoration bottom-right">🌟</div>
+                    </div>
+                    <h3>Sueños Compartidos</h3>
+                    <div class="flores-decorativas">✨ 💫 ⭐ 🌟 ✨</div>
+                    <div class="texto-decorativo">
+                        <p>Sueño con el día en que despierte</p>
+                        <p>y pueda abrazarte de verdad.</p>
+                        <p>Sueño con caminar contigo</p>
+                        <p>tomados de la mano.</p>
+                        <p>Sueño con construir juntos</p>
+                        <p>la vida que tanto deseamos.</p>
+                    </div>
+                    <div class="corazones-flotantes">💖 🌈 💕 🌈 💖</div>
+                </div>
+            </div>
+
+            <div class="page" data-page="22">
+                <div class="page-content decorativa">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">💝</div>
+                        <div class="corner-decoration top-right">🌺</div>
+                        <div class="corner-decoration bottom-left">💕</div>
+                        <div class="corner-decoration bottom-right">💝</div>
+                    </div>
+                    <h3>Tu Lugar en Mi Corazón</h3>
+                    <div class="flores-decorativas">💖 🌸 💖 🌸 💖</div>
+                    <div class="texto-decorativo">
+                        <p>En mi corazón tienes el lugar más especial,</p>
+                        <p>un rincón sagrado donde solo tú habitas.</p>
+                        <p>Allí guardas cada sonrisa, cada lágrima,</p>
+                        <p>cada momento que hemos compartido.</p>
+                        <p>Ese lugar es eterno, como nuestro amor.</p>
+                    </div>
+                    <div class="corazones-flotantes">🌹 💓 🌷 💓 🌹</div>
+                </div>
+            </div>
+
+            <div class="page" data-page="23">
+                <div class="page-content decorativa">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌻</div>
+                        <div class="corner-decoration top-right">💗</div>
+                        <div class="corner-decoration bottom-left">🌼</div>
+                        <div class="corner-decoration bottom-right">🌻</div>
+                    </div>
+                    <h3>Agradecimiento Infinito</h3>
+                    <div class="flores-decorativas">🙏 💕 🙏 💕 🙏</div>
+                    <div class="texto-decorativo">
+                        <p>Gracias por elegirme cada día,</p>
+                        <p>por amarme con tanta pureza.</p>
+                        <p>Gracias por tu paciencia,</p>
+                        <p>por tu comprensión, por tu fidelidad.</p>
+                        <p>Gracias por ser mi compañera</p>
+                        <p>en esta hermosa aventura de amor.</p>
+                    </div>
+                    <div class="corazones-flotantes">💐 ✨ 💝 ✨ 💐</div>
+                </div>
+            </div>
+
+            <div class="page" data-page="24">
+                <div class="page-content decorativa">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">🌈</div>
+                        <div class="corner-decoration top-right">💖</div>
+                        <div class="corner-decoration bottom-left">⭐</div>
+                        <div class="corner-decoration bottom-right">🌈</div>
+                    </div>
+                    <h3>Nuestro Futuro Juntos</h3>
+                    <div class="flores-decorativas">🌟 💫 🌟 💫 🌟</div>
+                    <div class="texto-decorativo">
+                        <p>Veo un futuro lleno de risas,</p>
+                        <p>de abrazos interminables,</p>
+                        <p>de aventuras compartidas</p>
+                        <p>y de amor que crece cada día.</p>
+                        <p>Veo una vida hermosa</p>
+                        <p>construida entre los dos.</p>
+                    </div>
+                    <div class="corazones-flotantes">🎊 💕 🎉 💕 🎊</div>
+                </div>
+            </div>
+
+            <!-- Página final -->
+            <div class="page" data-page="25">
+                <div class="page-content cierre">
+                    <div class="page-decoration">
+                        <div class="corner-decoration top-left">💖</div>
+                        <div class="corner-decoration top-right">🌹</div>
+                        <div class="corner-decoration bottom-left">💕</div>
+                        <div class="corner-decoration bottom-right">💖</div>
+                    </div>
+                    <h2>💖 Para Siempre Tuyo 💖</h2>
+                    <p>Mi querida Doménica,</p>
+                    <p>Este librito llega a su fin, pero nuestro amor apenas comienza a escribir su historia más hermosa.</p>
+                    <p>Cada página, cada palabra, cada emoji ha sido elegido con el corazón lleno de amor por ti.</p>
+                    
+                    <div class="mensaje-final">
+                        🌟 Que este librito sea un recordatorio de lo especial que eres para mí 🌟
+                    </div>
+                    
+                    <p>Aunque la distancia nos separe físicamente, nuestro amor trasciende cualquier espacio y tiempo.</p>
+                    <p>Eres mi sol en los días grises, mi refugio en las tormentas, mi razón para sonreír cada mañana.</p>
+                    
+                    <div class="firma-final">
+                        <p>Con todo mi amor desde la distancia,</p>
+                        <p class="nombre">Tu amor eterno 💕</p>
+                        <div class="corazones-final">💖 💞 💗 💝 💕 💓</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navegación -->
+        <div class="navigation">
+            <button id="prev-btn" onclick="previousPage()">
+                <i class="fas fa-chevron-left"></i> Anterior
+            </button>
+            <span id="page-indicator">1 / 25</span>
+            <button id="next-btn" onclick="nextPage()">
+                Siguiente <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
