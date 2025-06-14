@@ -88,7 +88,7 @@ function startGlobalNotificationTimer() {
         notificationTimer = setTimeout(() => {
             showNotification();
             notificationShown = true; // Marcar que ya se mostró
-        }, 60000); // 1 minuto = 60000 ms
+        }, 120000); // 1 minuto = 60000 ms
     }
 }
 
